@@ -1,3 +1,336 @@
+/* === VARIABLES DE COLOR === */
+:root {
+    --color-primario: #007bff; /* Un azul limpio y profesional */
+    --color-primario-hover: #0056b3;
+    --color-whatsapp: #25D366;
+    --color-whatsapp-hover: #1DA851;
+    --color-fondo: #f9f9f9;
+    --color-fondo-seccion: #ffffff;
+    --color-texto: #333;
+    --color-titulos: #111;
+    --color-borde: #eee;
+    --color-oscuro: #222;
+}
+
+/* === RESETEO BÁSICO Y FUENTES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--color-titulos);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* === NAVEGACIÓN === */
+.navbar {
+    background: var(--color-fondo-seccion);
+    border-bottom: 1px solid var(--color-borde);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sutil sombra para que se "levante" */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-titulos);
+    text-decoration: none;
+    height: 40px; /* Ajusta la altura del logo */
+    display: flex;
+    align-items: center;
+}
+.navbar .logo img {
+    height: 100%; /* Asegura que la imagen se ajuste a la altura del logo */
+    width: auto;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav li {
+    margin-left: 25px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.navbar nav a:hover {
+    color: var(--color-primario);
+}
+
+/* === SLIDER HÉROE === */
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    height: 70vh; /* Altura de la sección hero */
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    color: white; /* Asegura que el texto sea blanco */
+}
+
+.hero-slide::before { /* Capa oscura para mejorar la legibilidad del texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Ajusta la opacidad según necesites */
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide .container {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima de la capa oscura */
+}
+
+.hero-slider h1 {
+    font-size: 3.8rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-slider p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* === BOTONES === */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1.05rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.btn-primary {
+    background-color: var(--color-fondo-seccion);
+    color: var(--color-primario);
+    border: 2px solid var(--color-fondo-seccion);
+}
+.btn-primary:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    box-shadow: none;
+}
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: white;
+    width: 100%;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.btn-whatsapp:hover {
+    background-color: var(--color-whatsapp-hover);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.btn-large {
+    font-size: 1.25rem;
+    padding: 18px 35px;
+}
+.btn i {
+    margin-right: 10px;
+}
+
+
+/* === SECCIÓN PRODUCTOS === */
+.productos-section {
+    background: var(--color-fondo);
+    text-align: center;
+}
+
+.productos-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 2rem;
+}
+
+.producto-card {
+    background: var(--color-fondo-seccion);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 280px; /* Altura fija para las imágenes de producto */
+    object-fit: cover;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.producto-card h3 {
+    margin: 1.5rem 20px 0.5rem 20px;
+    font-size: 1.7rem;
+}
+
+.producto-card p {
+    padding: 0 20px;
+    flex-grow: 1;
+    font-size: 1.05rem;
+    color: #666;
+}
+
+.producto-card .context-image {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes de contexto */
+    background-size: cover;
+    background-position: center;
+    margin-top: 1rem;
+    border-top: 1px solid var(--color-borde);
+}
+
+.producto-card .btn-whatsapp {
+    border-radius: 0 0 12px 12px;
+    padding: 18px;
+    margin-top: 1rem; /* Espacio entre la imagen de contexto y el botón */
+}
+
+/* === SECCIÓN SOBRE NOSOTROS === */
+.about-section {
+    background: var(--color-fondo-seccion);
+    text-align: center;
+}
+.about-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.15rem;
+    color: #555;
+}
+.about-section p strong {
+    color: var(--color-titulos);
+}
+
+/* === SECCIÓN B2B (PROVEEDORES) === */
+.b2b-section {
+    background: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+.b2b-section h2 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+.b2b-section p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* === SECCIÓN CALIDAD (Y VIDEO) === */
+.calidad-section {
+    background: var(--color-fondo-seccion);
+    text-align: center;
+    border-top: 1px solid var(--color-borde);
+}
+.calidad-section h3 {
+    font-size: 2.2rem;
+}
+.calidad-section p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.15rem;
+    color: #555;
+}
+
 /* === CSS PARA VIDEO DIRECTO === */
 .video-container {
     width: 100%;
@@ -12,4 +345,118 @@
     width: 100%;
     height: auto;
     display: block; /* Elimina espacio en blanco inferior */
+}
+
+/* === FOOTER (PIE DE PÁGINA) === */
+.footer {
+    background: var(--color-oscuro);
+    color: #ccc;
+    text-align: center;
+    padding: 50px 0;
+    border-top: 5px solid var(--color-primario);
+}
+.footer p {
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+}
+.footer strong {
+    color: white;
+}
+.footer small {
+    color: #999;
+}
+
+/* === BOTÓN FLOTANTE DE WHATSAPP === */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-whatsapp);
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0,211,49,0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0,211,49,0.6);
+}
+
+
+/* === RESPONSIVE PARA CELULARES === */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+    .navbar .logo {
+        margin-bottom: 15px;
+    }
+    .navbar nav ul {
+        flex-wrap: wrap; /* Permite que los elementos salten de línea */
+        justify-content: center;
+    }
+    .navbar nav li {
+        margin: 0 10px 10px 10px; /* Espaciado ajustado */
+    }
+
+    .hero-slider h1 {
+        font-size: 2.5rem;
+    }
+    .hero-slider p {
+        font-size: 1.1rem;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 25px;
+    }
+
+    .b2b-section h2 {
+        font-size: 2rem;
+    }
+    .b2b-section p {
+        font-size: 1rem;
+    }
+
+    .calidad-section h3 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 40px 0; /* Padding reducido en móviles */
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slider h1 {
+        font-size: 2rem;
+    }
+    .hero-slider p {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .btn-large {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
 }
