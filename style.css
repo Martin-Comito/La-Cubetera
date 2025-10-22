@@ -361,7 +361,7 @@ body.dark-mode .producto-card p {
     background-position: 50% 50%; /* 50% 50% = center center */
 }
 .context-barra {
-    background-position: 50% 60%; /* 50% horizontal, 60% vertical (muestra más abajo) */
+    background-position: 40% 60%; /* 40% horizontal, 60% vertical (muestra más abajo) */
 }
 .context-auto {
     background-position: 50% 50%; /* 50% 50% = center center */
