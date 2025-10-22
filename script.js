@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // === AJUSTE DE VELOCIDAD DEL VIDEO ===
+    const videoPlayer = document.querySelector('.video-player'); 
+    if (videoPlayer) {
+        // Establece la velocidad de reproducción (1.0 es normal, <1 es más lento)
+        videoPlayer.playbackRate = 0.75; // <-- 75% de velocidad. Cambia a 0.5 para 50%
+    }
+
     // === SLIDER HERO ===
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
@@ -61,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             newTheme = 'dark';
         }
-        
+
         // Aplicar el nuevo tema
         applyTheme(newTheme);
-        
+
         // Guardar la preferencia en localStorage
         localStorage.setItem('theme', newTheme);
     });
