@@ -180,11 +180,14 @@ body.dark-mode .navbar .logo img {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Capa blanca en modo claro */
     background: rgba(255, 255, 255, 0.6); 
     transition: background-color var(--transition-speed);
     z-index: 1;
 }
 
+/* === INICIA EL ARREGLO === */
+/* Capa oscura en modo oscuro */
 body.dark-mode .hero-slide::before {
     background: rgba(0, 0, 0, 0.5);
 }
@@ -198,6 +201,7 @@ body.dark-mode .hero-slide::before {
     z-index: 2;
 }
 
+/* Título azul en modo claro */
 .hero-slider h1 {
     font-size: 3.8rem;
     color: var(--color-primario);
@@ -206,22 +210,27 @@ body.dark-mode .hero-slide::before {
     transition: color var(--transition-speed), text-shadow var(--transition-speed);
 }
 
+/* Título BLANCO en modo oscuro */
 body.dark-mode .hero-slider h1 {
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
+/* Párrafo NEGRO en modo claro */
 .hero-slider p {
     font-size: 1.4rem;
     margin-bottom: 2.5rem;
     color: var(--color-texto);
     text-shadow: none;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
 }
 
+/* Párrafo BLANCO en modo oscuro */
 body.dark-mode .hero-slider p {
-    color: var(--color-fondo);
+    color: var(--color-fondo); /* Es un color claro */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
+/* === TERMINA EL ARREGLO === */
 
 
 /* === BOTONES === */
@@ -356,17 +365,16 @@ body.dark-mode .producto-card p {
     filter: brightness(0.95);
 }
 
-/* === CAMBIO AQUÍ: REGLAS ESPECÍFICAS AÑADIDAS === */
+/* Reglas de posición de imágenes de contexto */
 .context-fiesta {
     background-position: 50% 50%; /* 50% 50% = center center */
 }
 .context-barra {
-    background-position: 40% 60%; /* 40% horizontal, 60% vertical (muestra más abajo) */
+    background-position: 50% 70%; /* 50% horizontal, 70% vertical (más arriba que 80%) */
 }
 .context-auto {
     background-position: 50% 50%; /* 50% 50% = center center */
 }
-/* === FIN DEL CAMBIO === */
 
 
 body.dark-mode .producto-card .context-image {
