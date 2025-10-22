@@ -1,0 +1,15 @@
+/* === CSS PARA VIDEO DIRECTO === */
+.video-container {
+    width: 100%;
+    max-width: 900px; /* Limita el ancho máximo del video */
+    margin: 2rem auto 0 auto; /* Centra el video y le da espacio arriba */
+    border-radius: 12px;
+    overflow: hidden; /* Asegura que el video respete los bordes redondeados */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.video-player {
+    width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio en blanco inferior */
+}
