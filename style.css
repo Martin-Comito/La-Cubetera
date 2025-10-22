@@ -60,7 +60,7 @@ p {
     margin-bottom: 1rem;
     transition: color var(--transition-speed);
 }
-p strong { /* Corregir énfasis en modo oscuro */
+p strong, p em { /* Corregir énfasis en modo oscuro */
     color: var(--color-titulos);
     transition: color var(--transition-speed);
 }
@@ -230,10 +230,10 @@ body.dark-mode .hero-slider h1 {
     transition: color var(--transition-speed), text-shadow var(--transition-speed);
 }
 
-/* Párrafo BLANCO en modo oscuro */
+/* Párrafo BLANCO en modo oscuro (¡CORREGIDO!) */
 body.dark-mode .hero-slider p {
-    color: var(--color-texto); /* <-- ¡ARREGLADO! (Antes decía --color-fondo) */
-    text-shadow: 1px 1px 3px rgba(242, 242, 245, 0.822);
+    color: var(--color-texto); /* <-- ESTE ES EL ARREGLO */
+    text-shadow: 1px 1px 3px rgba(233, 236, 240, 0.7);
 }
 /* === FIN DEL ARREGLO === */
 
@@ -532,6 +532,34 @@ body.dark-mode .footer strong {
 body.dark-mode .footer small {
     color: #777;
 }
+
+/* === INICIO DE CAMBIO: SECCIÓN REDES SOCIALES (FOOTER) === */
+.social-links {
+    margin: 1.5rem 0 1rem 0; /* Espacio arriba y abajo */
+}
+
+.social-icon {
+    color: #ccc; /* Color de icono en modo claro */
+    font-size: 2rem; /* Tamaño del icono */
+    margin: 0 15px; /* Espacio entre iconos */
+    text-decoration: none;
+    transition: color var(--transition-speed), transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--color-primario); /* Color azul al pasar el mouse */
+    transform: scale(1.1);
+}
+
+body.dark-mode .social-icon {
+    color: #999; /* Color de icono en modo oscuro */
+}
+
+body.dark-mode .social-icon:hover {
+    color: var(--color-primario); /* Mismo color azul en hover */
+}
+/* === FIN DE CAMBIO: SECCIÓN REDES SOCIALES === */
+
 
 /* === BOTÓN FLOTANTE DE WHATSAPP === */
 .whatsapp-float {
