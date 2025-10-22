@@ -60,6 +60,10 @@ p {
     margin-bottom: 1rem;
     transition: color var(--transition-speed);
 }
+p strong { /* Corregir énfasis en modo oscuro */
+    color: var(--color-titulos);
+    transition: color var(--transition-speed);
+}
 
 img {
     max-width: 100%;
@@ -372,7 +376,7 @@ body.dark-mode .producto-card p {
     background-position: 50% 50%; /* 50% 50% = center center */
 }
 .context-barra {
-    background-position: 50% 50%; /* 50% horizontal, 50% vertical (ajustado más arriba) */
+    background-position: 50% 70%; /* 50% horizontal, 70% vertical (ajustado más arriba) */
 }
 .context-auto {
     background-position: 50% 50%; /* 50% 50% = center center */
